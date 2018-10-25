@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>Block List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+
+	<ion-spinner name="bubbles" *ngIf="looding" class="looding"></ion-spinner>
+
+
+	<div *ngIf="!looding">
+
+
+		<div class="no-items" *ngIf="blockList == 0">
+			<ion-icon name="person"></ion-icon>
+			<p>No Users Found</p>
+		</div>
+
+
+		<div *ngIf="blockList != 0">
+			<ion-list-header>Block List</ion-list-header>
+			<ion-item *ngFor="let user of blockList" (click)="showBlockConfirmation(user)">
+				<ion-avatar item-start>
+			      <img src="{{user.Photo}}">
+			    </ion-avatar>
+			    <h2>{{user.Name}}</h2>
+			</ion-item>
+		</div>
+
+
+	</div>
+
+
+
+
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="header">
+    <ion-title>Requests</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+<ion-spinner name="bubbles" *ngIf="looding" class="looding"></ion-spinner>
+
+
+<div *ngIf="sentRequests != 0">
+	<ion-list-header>Sent Requests</ion-list-header>
+	<ion-item *ngFor="let user of sentRequests" (click)="showSentRequestsConfirmation(user)">
+		<ion-avatar item-start>
+	      <img src="{{user.Photo}}">
+	    </ion-avatar>
+	    <h2>{{user.Name}}</h2>
+	</ion-item>
+</div>
+
+
+
+
+<div *ngIf="receivedRequests != 0">
+	<ion-list-header>Received Requests</ion-list-header>
+	<ion-item *ngFor="let user of receivedRequests" (click)="showReceivedRequestsConfirmation(user)">
+		<ion-avatar item-start>
+	      <img src="{{user.Photo}}">
+	    </ion-avatar>
+	    <h2>{{user.Name}}</h2>
+	</ion-item>
+</div>
+
+
+
+
+
+</ion-content>

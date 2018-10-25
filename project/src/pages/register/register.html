@@ -1,0 +1,84 @@
+<ion-content>
+
+
+
+	<div class="containermd">
+
+		<div class="logo">
+			<img src="assets/imgs/logo.png" width="64px" height="64px">
+		</div>
+
+
+		<ion-item>
+			<ion-label floating><ion-icon name="person"></ion-icon> Name</ion-label>
+			<ion-input (ionChange)='nameInput($event)' type="text" [(ngModel)]="userDetails.Name" required></ion-input>
+		</ion-item>
+		<ion-item-divider *ngIf="!name">Name should be at least 6 characters</ion-item-divider>
+		<ion-item-divider *ngIf="name"><ion-icon color="secondary" name="checkmark"></ion-icon> Name should be at least 6 characters</ion-item-divider>
+
+
+		<br>
+
+		<ion-item>
+			<ion-label floating><ion-icon name="mail"></ion-icon> Email</ion-label>
+			<ion-input (ionChange)='emailInput($event)' type="email" [(ngModel)]="userDetails.Email" required></ion-input>
+		</ion-item>
+		<ion-item-divider *ngIf="!email">Email should be xxxx@xxxx.com</ion-item-divider>
+		<ion-item-divider *ngIf="email"><ion-icon color="secondary" name="checkmark"></ion-icon> Email should be xxxx@xxxx.com</ion-item-divider>
+
+		<br>
+
+
+		<ion-item>
+			<ion-label floating><ion-icon name="lock"></ion-icon> Password</ion-label>
+			<ion-input (ionChange)='passwordInput($event)' type="password" *ngIf="!showPasswordText" [(ngModel)]="userDetails.Password" required></ion-input>
+			<ion-input (ionChange)='passwordInput($event)' type="text" *ngIf="showPasswordText" [(ngModel)]="userDetails.Password" required></ion-input>
+			<button ion-button clear item-right (click)="showHide()"> <ion-icon name="eye"> </ion-icon> </button>
+		</ion-item>
+		<ion-item-divider *ngIf="!password">Password should be at least 6 characters</ion-item-divider>
+		<ion-item-divider *ngIf="password"><ion-icon color="secondary" name="checkmark"></ion-icon> Password should be at least 6 characters</ion-item-divider>
+
+
+		<br>
+
+
+		<ion-item>
+			<ion-label floating><ion-icon name="call"></ion-icon> Mobile</ion-label>
+			<ion-input (ionChange)='phoneInput($event)' type="number" [(ngModel)]="userDetails.Phone" required></ion-input>
+		</ion-item>
+		<ion-item-divider *ngIf="!phone">Phone should be 11 numbers</ion-item-divider>
+		<ion-item-divider *ngIf="phone"><ion-icon color="secondary" name="checkmark"></ion-icon> Phone should be 11 numbers/ion-item-divider</ion-item-divider>
+
+		<br>
+
+
+		<ion-item>
+			<ion-label>I accept the terms and privacy policy</ion-label>
+			<ion-checkbox (ionChange)='agreeWithPolicyInput($event)' color="header" checked="false" [(ngModel)]="userDetails.agreeWithPolicy" required></ion-checkbox>
+		</ion-item>
+		<ion-item-divider *ngIf="!agreeWithPolicy">Accept the terms and privacy policy</ion-item-divider>
+		<ion-item-divider *ngIf="agreeWithPolicy"><ion-icon color="secondary" name="checkmark"></ion-icon> Accept the terms and privacy policy</ion-item-divider>
+
+
+		<br>
+
+
+		<button color="header" [disabled]='!isenabled' ion-button block (click)="register()">
+			Register
+		</button>
+
+
+
+		<br>
+
+		<p block class="login" (click)="backToLogin()">
+			Back to login !
+		</p>
+
+	</div>
+
+
+
+
+
+</ion-content>

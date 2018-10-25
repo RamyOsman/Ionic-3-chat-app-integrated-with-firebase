@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="header">
+    <ion-title>Notifications</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+	<ion-spinner name="bubbles" *ngIf="looding" class="looding"></ion-spinner>
+
+
+
+	<div *ngIf="!looding">
+
+
+		<div class="no-items" *ngIf="blockList == 0">
+			<ion-icon name="person"></ion-icon>
+			<p>No Notification yet</p>
+		</div>
+
+
+		<div *ngIf="Notifications != 0">
+			<ion-item *ngFor="let item of Notifications; let i = index" (click)="showNotificationsConfirmation(item)">
+				<ion-avatar item-start>
+			      <img src="{{allUsers[i].Photo}}">
+			    </ion-avatar>
+			    <h2 *ngIf="item.Type == 'Request'">New request from {{allUsers[i].Name}}</h2>
+			    <h2 *ngIf="item.Type == 'Friend'">You and {{allUsers[i].Name}} are now friends</h2>
+			</ion-item>
+		</div>
+
+
+	</div>
+
+
+
+
+
+
+
+</ion-content>

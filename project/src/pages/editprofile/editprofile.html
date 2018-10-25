@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+	<ion-item>
+		<ion-label floating><ion-icon name="person"></ion-icon> Name</ion-label>
+		<ion-input type="text" [(ngModel)]="userDetails.Name" required></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label floating><ion-icon name="call"></ion-icon> Mobile</ion-label>
+		<ion-input type="number" [(ngModel)]="userDetails.Phone" required></ion-input>
+	</ion-item>
+
+
+	<ion-item>
+		<ion-label floating>About</ion-label>
+		<ion-textarea type="text" [(ngModel)]="userDetails.about" required></ion-textarea>
+	</ion-item>
+
+
+	<br>
+	<br>
+	
+	<button ion-button block color="header" (click)="updateProfile()">
+		Update
+	</button>
+
+
+</ion-content>

@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>{{groupDetails.Name}}</ion-title>
+    <ion-buttons end>
+    	<button ion-button ion-icon icon-only icon-left (click)="showActionSheet()">
+    		<ion-icon name="more"></ion-icon>
+    	</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+
+
+
+<div class="chatwindow">
+	<ion-list no-lines>
+		<ion-item *ngFor="let message of allMessages; let i = index">
+
+
+			<ion-avatar item-right *ngIf="message.Id != User_Uid">
+				<img src="{{allUsers[i].Photo}}">
+			</ion-avatar>
+			<div class="bubble you" *ngIf="message.Id != User_Uid">
+				<h3 text-wrap>{{message.Body}}</h3>
+			</div>
+
+
+			<ion-avatar item-left *ngIf="message.Id === User_Uid">
+				<img src="{{allUsers[i].Photo}}">
+			</ion-avatar>
+			<div class="bubble me" *ngIf="message.Id === User_Uid">
+				<h3 text-wrap>{{message.Body}}</h3>
+			</div>
+
+
+		</ion-item>
+	</ion-list>
+</div>
+
+
+
+
+
+
+
+
+</ion-content>
+
+
+<ion-footer fixed>
+	<ion-toolbar>
+		<ion-textarea type="text" [(ngModel)]="newMessage.body"></ion-textarea>
+		<ion-buttons end>
+			<button ion-button ion-icon icon-only (click)="sendMessage()">
+				<ion-icon name="send"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-footer>

@@ -1,0 +1,40 @@
+
+<ion-content class="bg-image no-scroll" padding>
+
+
+	<img src="assets/imgs/logo.png" class="logo">
+
+	<div>
+		<ion-list class="list" inset>
+			<ion-item class="label">
+				<ion-label color="whitee" style="font-size: 12px;" stacked>Email</ion-label>
+				<ion-input (ionChange)='emailInput($event)' color="whitee" type="email" [(ngModel)]="userDetails.Email" required placeholder="Enter Email"></ion-input>
+			</ion-item>
+			<ion-item-divider *ngIf="!email">Email should be xxxx@xxxx.com</ion-item-divider>
+			<ion-item-divider *ngIf="email"><ion-icon color="secondary" name="checkmark"></ion-icon> Email should be xxxx@xxxx.com</ion-item-divider>
+
+			<br>
+
+			<ion-item class="label">
+				<ion-label color="whitee" style="font-size: 12px;" stacked>Password</ion-label>
+				<ion-input color="whitee" (ionChange)='passwordInput($event)' type="password" [(ngModel)]="userDetails.Password" required placeholder="Enter Password"></ion-input>
+			</ion-item>
+			<ion-item-divider *ngIf="!password">Password should be at least 6 characters</ion-item-divider>
+			<ion-item-divider *ngIf="password"><ion-icon color="secondary" name="checkmark"></ion-icon> Password should be at least 6 characters</ion-item-divider>
+
+
+		</ion-list>
+	</div>
+
+
+	<p class="text" style="font-size: 14px; color: #FFF" (click)="forgrtPassword()">Forget your password</p>
+
+	<div text-center>
+		<button class="btnWidth" ion-button color="secondary" round (click)="login()" [disabled]='!isenabled'>Login</button>
+	</div>
+
+	<div text-center>
+		<button class="myButtin" ion-button color="whitee" round outline [navPush]="registerPage">Sign Up</button>
+	</div>
+
+</ion-content>

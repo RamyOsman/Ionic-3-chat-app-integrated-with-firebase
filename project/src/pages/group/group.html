@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>Group</ion-title>
+    <ion-buttons end>
+    	<button ion-button icon-left icon-only (click)="openNewGroupPage()">
+    		<ion-icon name="add"></ion-icon>
+    		<ion-icon name="contacts"></ion-icon>
+    	</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+
+
+<ion-spinner name="bubbles" *ngIf="looding" class="looding"></ion-spinner>
+
+
+    <div *ngIf="!looding">
+
+
+        <div class="no-items" *ngIf="blockList == 0">
+            <ion-icon name="contacts"></ion-icon>
+            <p>No Groups Found</p>
+        </div>
+
+
+
+        <div *ngIf="Groups != 0">
+        	<ion-item *ngFor="let group of Groups" (click)="openGroupBody(group)">
+
+
+        		<ion-avatar item-start *ngIf="group.Owner === User_Uid">
+        	      <img src="{{group.Picture}}">
+        	  </ion-avatar>
+        	  <h2 *ngIf="group.Owner === User_Uid">{{group.Name}}</h2>
+            <ion-note *ngIf="group.Owner === User_Uid">By Me</ion-note>
+
+
+
+
+            <ion-avatar item-start *ngIf="group.Owner != User_Uid">
+                <img src="{{group.Picture}}">
+            </ion-avatar>
+            <h2 *ngIf="group.Owner != User_Uid">{{group.Name}}</h2>
+
+
+        	</ion-item>
+        </div>
+
+
+    </div>
+
+
+
+
+</ion-content>

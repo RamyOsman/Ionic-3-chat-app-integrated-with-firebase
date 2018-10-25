@@ -1,0 +1,72 @@
+page-chat {
+
+
+
+
+
+    .menu-inner .scroll-content {
+            background: linear-gradient(0deg, rgba(6, 6, 6, 0.8), rgba(4, 4, 4, 0.87)), url("../assets/imgs/bg1.jpg") center;
+            background-size: cover;
+    }
+
+    .menu-inner .item-md h2, .menu-inner .item-md p {
+        color: #FFF;
+    }
+
+
+
+
+
+
+
+    .item-md {
+        padding-left: 0px;
+        border-bottom: 1px solid #dedede;
+        background: transparent;
+    }
+
+    .item-md.item-block .item-inner {
+        padding-right: 0px;
+        border-bottom: none !important;
+    }
+
+
+
+    .online {
+        position: absolute;
+        left: 30px;
+        top: 42px;
+        width: 13px;
+        background: #11f1f3;
+        height: 13px;
+        border-radius: 50%;
+        border: 2px solid #FFF;
+    }
+
+
+
+    .onlinee {
+        position: absolute;
+        top: 25px;
+        right: 5px;
+        width: 11px;
+        background: #2ec95c;
+        height: 11px;
+        border-radius: 50%;
+        border: 2px solid #FFF;
+    }
+
+
+    .offlinee {
+        position: absolute;
+        top: 25px;
+        right: 5px;
+        width: 11px;
+        background: #c62828;
+        height: 11px;
+        border-radius: 50%;
+        border: 2px solid #FFF;
+    }
+
+
+}

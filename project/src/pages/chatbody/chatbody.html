@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>{{details.Name}}</ion-title>
+    <div class="online" *ngIf="details.Status == onlineStatus"></div>
+    <div class="offline" *ngIf="details.Status == offlineStatus"></div>
+    <span class="Status">{{details.Status}}</span>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding #content>
+
+
+
+
+
+
+<div>
+	<ion-list no-lines>
+		<ion-item *ngFor="let message of allMessages; let last = last" (press)="showMessageConfirm(message, myDetails, details)">
+
+
+			{{last ? callFunction() : ''}}
+
+			<ion-avatar item-right *ngIf="message.Id != details.Id">
+				<img src="{{myDetails.Photo}}">
+			</ion-avatar>
+			<div class="bubble you" *ngIf="message.Id != details.Id">
+				<h3 text-wrap>{{message.Body}}</h3>
+			</div>
+
+
+			<ion-avatar item-left *ngIf="message.Id === details.Id">
+				<img src="{{details.Photo}}">
+			</ion-avatar>
+			<div class="bubble me" *ngIf="message.Id === details.Id">
+				<h3 text-wrap>{{message.Body}}</h3>
+			</div>
+
+
+		</ion-item>
+	</ion-list>
+</div>
+
+
+
+
+
+
+</ion-content>
+
+<ion-footer>
+	<ion-toolbar>
+		<ion-textarea type="text" [(ngModel)]="newMessage.body"></ion-textarea>
+		<ion-buttons end>
+			<button ion-button ion-icon icon-only (click)="sendMessage()">
+				<ion-icon name="send"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-footer>

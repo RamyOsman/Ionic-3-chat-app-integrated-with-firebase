@@ -1,0 +1,125 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.scroll-content {
+    overflow-y: auto !important;
+}
+
+.action-sheet-md .action-sheet-group {
+    overflow-y: auto !important;
+    overflow-x: auto !important;
+}
+
+
+
+.alert-head {
+    padding: 0 !important;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+    text-align: center !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.alert-title {
+    color: #4A148C !important;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+}
+
+.alert-message {
+    color: #000 !important;
+    padding: 0 !important;
+    text-align: center;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    overflow-y: auto !important;
+}
+
+.alert-button-group {
+    padding: 0px !important;
+    margin-top: 10px !important;
+    border-top: 2px solid;
+    color: #4A148C !important;
+    justify-content: left !important;
+}
+
+.alert-button {
+    padding: 0px !important;
+    margin: 0px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    text-transform: capitalize !important;
+    width: 100% !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    color: #4A148C !important;
+}
+
+.half-alert-button {
+    width: 50% !important;
+}
+
+.alert-wrapper .button-inner {
+    justify-content: center !important;
+}
+
+
+.action-sheet-md .action-sheet-title, .action-sheet-md .action-sheet-group .button-inner {
+    color: #4A148C;
+}
+
+
+
+
+.btn {
+    background: linear-gradient(to right, rgb(195, 20, 50), rgb(36, 11, 54))
+}
+
+.toolbar-md-tabs .toolbar-background-md {
+    background: linear-gradient(to right, #06206b, #1c6ae0);
+}
+
+
+
+
+
+
+.looding {
+    transform: translate(-50%, -50%);
+    left: 50%;
+    position: absolute;
+    top: 50%;
+}
+
+.no-items {
+    transform: translate(-50%, -50%);
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    color: #0D47A1;
+    font-size: 18px;
+}
+
+.no-items ion-icon {
+    font-size: 3.5em;
+}

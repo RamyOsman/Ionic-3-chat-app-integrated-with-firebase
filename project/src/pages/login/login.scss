@@ -1,0 +1,73 @@
+page-login {
+
+
+
+	.item-md {
+	    padding-left: 0;
+	    background-color: transparent;
+	}
+
+
+	.item-md.item-block .item-inner {
+	    padding: 0;
+	}
+
+	.item-label-stacked .text-input-md {
+	    color: #FFF;
+	    width: 100%;
+	}
+
+	.bg-image {
+		background: url('../assets/imgs/bg2.jpg') !important;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain; 
+	}
+
+	.no-scroll {
+		overflow: hidden;
+	}
+
+	.logo {
+		display: block;
+		margin: auto;
+		margin-top: 2vh;
+	}
+
+	.label {
+		background-color: rgba(255,255,255, 0.0);
+	}
+
+
+	input.text-input.text-input-md {
+	    margin-right: 0;
+	}
+
+	.list {
+		width: 90%;
+		margin: auto;
+		margin-left: 0 !important;
+    	width: 100%;
+	}
+
+	.text {
+		text-align: center;
+		margin-top: 30vh;
+	}
+
+	.btnWidth {
+		width: 80%
+	}
+
+	.myButtin {
+		margin-top: 8vh;
+		width: 90%;
+	}
+
+
+
+
+
+
+
+}

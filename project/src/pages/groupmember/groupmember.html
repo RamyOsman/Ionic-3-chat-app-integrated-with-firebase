@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>Members</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+<ion-spinner name="bubbles" *ngIf="looding" class="looding"></ion-spinner>
+
+
+	<ion-item *ngFor="let user of GroupMembers" (click)="showMemberConfirmation(user)">
+		<ion-avatar item-start>
+	      <img src="{{user.Photo}}">
+	    </ion-avatar>
+	    <h2>{{user.Name}}</h2>
+	    <ion-note *ngIf="groupDetails.Owner === user.Id">Admin</ion-note>
+	</ion-item>
+
+
+
+
+</ion-content>

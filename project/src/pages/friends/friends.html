@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>Friends</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-spinner name="bubbles" *ngIf="looding" class="looding"></ion-spinner>
+
+
+
+	<div *ngIf="!looding">
+
+
+		<div class="no-items" *ngIf="blockList == 0">
+			<ion-icon name="person"></ion-icon>
+			<p>No Friends yet</p>
+		</div>
+
+
+		<div *ngIf="Friends != 0">
+			<ion-list-header>Friends</ion-list-header>
+			<ion-item *ngFor="let user of Friends" (click)="showFriendsConfirmation(user)">
+				<ion-avatar item-start>
+			      <img src="{{user.Photo}}">
+			    </ion-avatar>
+			    <h2>{{user.Name}}</h2>
+			</ion-item>
+		</div>
+
+
+	</div>
+
+
+
+
+
+</ion-content>

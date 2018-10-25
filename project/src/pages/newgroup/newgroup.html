@@ -1,0 +1,69 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>Create Group</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+
+
+<div class="body-content">
+	<ion-list>
+
+		<br>
+		<br>
+		
+		<ion-avatar>
+			<img src="{{group.Picture}}" (click)="selectPicture()">
+		</ion-avatar>
+
+		<br>
+		<br>
+
+
+		<h2 (click)="editName()">{{group.Name}} <ion-icon color="header" name="create"></ion-icon></h2>
+
+		<br>
+		<br>
+
+		<div>
+			<p>Tap on group picture or name to change it</p>
+		</div>
+
+
+		<br>
+		<br>
+
+		<button ion-button color="header" block (click)="createGroup()">
+			Create Group
+		</button>
+
+
+
+	</ion-list>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ion-content>

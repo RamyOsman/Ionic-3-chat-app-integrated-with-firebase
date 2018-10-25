@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{details.Name}}</ion-title>
+    <div class="online" *ngIf="details.Status == onlineStatus"></div>
+    <div class="offline" *ngIf="details.Status == offlineStatus"></div>
+    <span class="Status">{{details.Status}}</span>
+    <ion-buttons end *ngIf="myProfile">
+    	<button ion-button ion-icon icon-only icon-left (click)="editProfile()">
+    		<ion-icon name="settings"></ion-icon>
+    	</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+
+
+	<div class="bg-image">
+		<img src="{{details.bgPhoto}}" width="100%" height="100%" (click)="bgPic()">
+	</div>
+
+
+
+	<div class="image">
+		<img src="{{details.Photo}}" (click)="proPic()">
+	</div>
+
+
+	<div class="followe">
+		<ul>
+			<li>
+				<span id="number">450</span>
+				<span id="followe">Followers</span>
+			</li>
+			<li>
+				<span id="number">200</span>
+				<span id="followe">Following</span>
+			</li>
+		</ul>
+	</div>
+
+
+
+	<div class="about">
+		<h3 class="title">About</h3>
+		<p class="body">{{details.about}}</p>
+	</div>
+
+
+
+
+	<div class="Phone">
+		<h3 class="title">Mobile Number</h3>
+		<p class="mob">{{details.Phone}}</p>
+		<button color="header" class="call" icon-left ion-icon ion-button (click)="callPhoneNumber(details.Phone)">
+			<ion-icon name="call"></ion-icon>
+		</button>
+	</div>
+
+
+
+	<div class="group" ion-item (click)="createGroup()"  *ngIf="!myProfile">
+		<span class="icons">
+			<ion-icon color="header" name="add"></ion-icon>
+			<ion-icon color="header" name="contacts"></ion-icon>
+		</span>
+		Create group with {{details.Name}}
+	</div>
+
+
+
+	<div class="block" ion-item (click)="block()" *ngIf="!myProfile">
+		<span class="icon"><ion-icon color="header" name="trash"></ion-icon></span>
+		Block
+	</div>
+
+
+
+
+
+
+
+
+</ion-content>

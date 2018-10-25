@@ -1,0 +1,96 @@
+<ion-header>
+
+  <ion-navbar color="header">
+  	<button ion-button ion-icon icon-only menuToggle="left">
+  		<ion-icon name="person"></ion-icon>
+  	</button>
+    <ion-title>Chat</ion-title>
+    <ion-buttons end>
+    	<button ion-button (click)="openUsersPage()">
+    		<ion-icon name="search"></ion-icon>
+    	</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+<ion-spinner name="bubbles" *ngIf="looding" class="looding"></ion-spinner>
+
+
+	<ion-nav id="nav" #content [root]='rootPage'></ion-nav>
+	<ion-menu slide='left' [content]='content'>
+		<ion-content padding>
+			
+
+			<ion-item *ngFor="let user of Friends" menuClose (click)="openChatBody(user)">
+				<ion-avatar item-start>
+			      <img src="{{user.Photo}}">
+			    </ion-avatar>
+			    <h2>{{user.Name}}</h2>
+			    <p>{{user.Email}}</p>
+
+			    <div class="onlinee" *ngIf="user.Status == onlineStatus"></div>
+			    <div class="offlinee" *ngIf="user.Status == offlineStatus"></div>
+
+			</ion-item>
+
+
+		</ion-content>
+	</ion-menu>
+
+
+
+
+
+	<div *ngIf="!looding">
+
+
+		<div class="no-items" *ngIf="blockList == 0">
+			<ion-icon name="person"></ion-icon>
+			<p>No Chats Found</p>
+		</div>
+
+
+		<ion-list>
+			<ion-item *ngFor="let item of Conversations.reverse(); let i = index" (click)="openChatBody(allUsers[i])">
+				<ion-avatar item-left>
+					<img src="{{allUsers[i].Photo}}">
+					<div class="online" *ngIf="allUsers[i].Status == onlineStatus"></div>
+				</ion-avatar>
+				<div>
+					<h3 text-left>{{allUsers[i].Name}} <span float-end>{{item.Time}}</span></h3>
+					<h3>{{item.Body}}</h3>
+				</div>
+			</ion-item>
+		</ion-list>
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ion-content>
+
+

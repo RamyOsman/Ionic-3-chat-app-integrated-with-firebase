@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+<ion-item (click)="openProfilePage()">
+	<ion-avatar item-start>
+	    <img src="{{userDetails.proPhoto}}">
+	</ion-avatar>
+	<h2>{{userDetails.Name}}</h2>
+	<p>View Profile</p>
+</ion-item>
+
+
+<ion-item (click)="openFriendsPage()">
+	Friends
+</ion-item>
+
+<ion-item (click)="openRequestsPage()">
+	Requests
+</ion-item>
+
+<ion-item (click)="openBlockPage()">
+	Block
+</ion-item>
+
+
+<br>
+
+
+
+
+<button ion-button block class="btn" (click)="logOut()">
+	LogOut
+</button>
+
+
+
+
+
+</ion-content>

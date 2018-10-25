@@ -1,0 +1,47 @@
+page-newgroup {
+
+
+
+
+	ion-avatar img {
+		border-radius: 70px;
+		border: 3px solid #B71C1C;
+	}
+
+
+	.body-content {
+		text-align: center;
+		width: 90%;
+    	margin-left: auto;
+    	margin-right: auto;
+	}
+
+	.header{
+		display: block;
+	    font-family: Poppins-Bold;
+	    font-size: 39px;
+	    color: #330f49;
+	    line-height: 1.2;
+	}
+
+	ion-avatar img {
+	    width: 140px;
+	    height: 140px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+
+	.button-md {
+	    background: #B71C1C;
+	    border-radius: 25px;
+	    font-family: Poppins-Medium;
+	    font-size: 16px;
+	    color: #fff;
+	    text-align: center;
+	    text-transform: uppercase;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+
+
+}
